@@ -102,7 +102,8 @@ class HomeController extends Controller
         $pokenea = ["id"=>$randomQuote["Id"],
         "Nombre"=>$randomQuote["Nombre"],
         "Frase"=>$randomQuote["FraseFilosofica"],
-        "imagen"=>$randomQuote["Imagen"]
+        "imagen"=>$randomQuote["Imagen"],
+        "server_ip" => gethostbyname(gethostname())
         ];
         return view('home.pokenea')->with("viewData", $pokenea);
     }
@@ -115,7 +116,9 @@ class HomeController extends Controller
         "Nombre"=>$randomQuote["Nombre"],
         "Altura"=>$randomQuote["Altura"],
         "Habilidad"=>$randomQuote["Habilidad"]
+
         ];
-        return response()->json(['quote' => $pokenea]);
+
+        return response()->json(['quote' => $pokenea, 'server_ip' => gethostbyname(gethostname())]);
     }
 }

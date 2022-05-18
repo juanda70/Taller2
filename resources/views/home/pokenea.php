@@ -17,6 +17,6 @@
   <div class="card-body">
     <h5 class="card-title"><?php echo $viewData["Nombre"]; ?></h5>
     <p class="card-text"><?php echo $viewData["Frase"]; ?></p>
-
+    <p class="card-text"><?php echo $viewData["server_ip"]; ?></p>
   </div>
 </div>
